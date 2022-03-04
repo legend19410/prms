@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 public interface ScheduleDAO extends CrudRepository<Schedule, ScheduleId>{
 	
 	
-	@Query(value="SELECT * FROM Schedule WHERE officer_reg_no=:officerRegNo AND CAST(date AS DATE)= CAST(:datetime AS DATE)", nativeQuery=true)
+	@Query(value="SELECT * FROM schedule WHERE officer_reg_no=:officerRegNo AND CAST(date AS DATE)= CAST(:datetime AS DATE)", nativeQuery=true)
 	Schedule get(@Param("officerRegNo") int officerRegNo, @Param("datetime") String datetime);
 	
 	@Query(value="SELECT * FROM schedule WHERE date between :startDate and :endDate", nativeQuery=true)
