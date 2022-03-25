@@ -29,8 +29,8 @@ public class JwtUtil {
 	
 	private String SECRET_KEY = "secret";
 	private Algorithm signingAlgorithm = Algorithm.HMAC256(SECRET_KEY.getBytes());;
-	private Date ACCEESS_TOKEN_EXPIRY_DATE = new Date(System.currentTimeMillis() + 10 * 60 * 1000);
-	private Date REFRESH_TOKEN_EXPIRY_DATE = new Date(System.currentTimeMillis() + 30 * 60 * 1000);
+	private Date ACCEESS_TOKEN_EXPIRY_DATE = new Date(System.currentTimeMillis() + 10000 * 60 * 1000);
+	private Date REFRESH_TOKEN_EXPIRY_DATE = new Date(System.currentTimeMillis() + 30000 * 60 * 1000);
 	
 	public String extractUsername(String token) {
 		return extractClaim(token, Claims::getSubject);
